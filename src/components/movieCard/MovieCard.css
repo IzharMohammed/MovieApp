@@ -1,0 +1,30 @@
+.movie-wrapper{
+border: 2px solid;
+margin-top: 2rem;
+}
+
+.movie-up-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.movie-image img {
+padding: 2rem;
+}
+
+.movie-title{
+    margin: 0px auto;
+}
+
+.movie-title , .movie-year , .movie-type{
+text-align: center;
+}
+
+.movie-title {
+    font-size: 1.9rem;
+}
+
+.movie-year , .movie-type{
+    font-size: 1.3rem;
+}
