@@ -1,13 +1,9 @@
 .movie-wrapper{
 border: 2px solid;
 margin-top: 2rem;
+max-height: 39rem;
 }
 
-.movie-up-wrapper{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
 
 .movie-image img {
 padding: 2rem;
@@ -22,7 +18,8 @@ text-align: center;
 }
 
 .movie-title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
+    width: 22rem;
 }
 
 .movie-year , .movie-type{
