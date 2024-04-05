@@ -18,3 +18,16 @@
     border-radius: 10px;
     padding: 13px;
 }
+
+.search-bar-autocomplete{
+    border: 2px solid;
+    list-style-type: none;
+    position: absolute;
+    width: 28rem;
+    padding: 2rem;
+    left: 35%;
+    background-color: white;
+    font-size: 1.3rem;
+    top: 62px;
+    border-radius: 5px;
+}
