@@ -1,11 +1,11 @@
 import axios from "axios";
 import searchMovie from "../apis/omdb";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
-function useMovieList() {
+function useMovieList(...name) {
     const [movieList, setMovieList] = useState([]);
-
-    async function getMovies(...name) {
+    console.log('name : ', name);
+    async function getMovies() {
         console.log(name);
         const moviesarr = name.map((name) => searchMovie(name));
         console.log(moviesarr);
@@ -21,9 +21,8 @@ function useMovieList() {
     }
 
     useEffect(() => {
-        getMovies("avengers", "spider man", "harry potter");
-    }, []);
-
+        getMovies(...name);
+    }, [...name]);
 
 return {movieList}
 }

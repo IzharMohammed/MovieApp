@@ -1,11 +1,10 @@
 import Navbar from "../navbar/Navbar";
 import MovieCard from "../movieCard/MovieCard";
 import "./MoviePage.css";
-import { useState } from "react";
 import useMovieList from "../../hooks/useMovieList";
 
 function MoviePage() {
-   const {movieList}= useMovieList()
+   const {movieList}= useMovieList('avengers')
   return (
     <>
       <Navbar />

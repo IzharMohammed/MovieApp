@@ -1,19 +1,28 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import useMovieList from "../../hooks/useMovieList";
+
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
+  const [searchedText , isSearchedText] = useState('');
+  const {movieList} = useMovieList(!searchedText ? 'avengers' : searchedText );
+  console.log('movie List' , movieList);
+
   return (
     <div className="navbar-wrapper">
       <div className="navbar-heading">Movix</div>
       <input
         className="navbar-input"
         onFocus={() => {
-          console.log("on focus");
           setIsShown(true);
         }}
         onBlur={() => {
-          console.log("on blur");
           setIsShown(false);
+        }}
+        onChange={(e)=>{
+          console.log(e.target.value);
+          console.log('searched text ' , searchedText);
+          isSearchedText(e.target.value)
         }}
         type="text"
         placeholder="search here ..."
@@ -30,9 +39,11 @@ function Navbar() {
       {
         isShown &&
         <ul className="search-bar-autocomplete">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+          {
+            movieList.map((list)=>(
+              <li key={list.imdbID}>{list.Title}</li>
+            ))
+         } 
         </ul>
       }
     </div>
