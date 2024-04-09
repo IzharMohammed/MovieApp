@@ -1,24 +1,69 @@
-import React from 'react'
-import './MovieDetails.css'
-import { useParams } from 'react-router-dom';
-function MovieDetails({data}) {
-  console.log('inside ');
+import React, { useEffect } from "react";
+import { useState } from "react";
+import "./MovieDetails.css";
+import { movieinfo } from "../apis/omdb";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+function MovieDetails( ) {
+  const [movieData, setMovieData] = useState(null);
+  console.log("inside ");
   const { id } = useParams();
   console.log(id);
-  return (
-  <>
-   <div className="movieDetails-wrapper">
-        <div className="movieDetails-image">
-          <img src= "https://th.bing.com/th/id/OIP.nUq5FNECdHn2rExBOc65bQHaKF?w=208&h=283&c=7&r=0&o=5&dpr=1.3&pid=1.7"/>
-        </div>
-        <div className="movieDetails-title">Phata poster Nikla hero</div>
-        <div className="movieDetails-year">2014</div>
-        <div className="movieDetails-type">Abe maloom krna !!!</div>
+  const url = movieinfo(id);
+  console.log(url);
 
-     
+
+// METHOD 1
+/*   useEffect(() => {
+    axios.get(url).then((response) => {
+      console.log(response.data);
+      setMovieData(response.data);
+    });
+  }, url); */
+
+
+  // METHOD 2 
+  async function downloadMovie(){
+    const response = await axios.get(url)
+    console.log(response.data);
+    setMovieData(response.data)
+  }
+
+  useEffect(()=>{
+    downloadMovie()
+  },url)
+
+
+  console.log("Data : ", movieData);
+  return (
+    <>
+      <div className="movieDetails-wrapper">
+        {movieData ? (
+          <>
+            <div className="movieDetails-image">
+              <img src={movieData.Poster} />
+            </div>
+            <div className="movieDetails-title">{movieData.Title}</div>
+            <div className="movieDetails-year">{movieData.Year}</div>
+            <div className="movieDetails-type">Type : {movieData.Type}</div>
+            <div className="movieDetails-type">Actors : {movieData.Actors}</div>
+            <div className="movieDetails-type">Genre : {movieData.Genre}</div>
+            <div className="movieDetails-type">
+              Language : {movieData.Language}
+            </div>
+            <div className="movieDetails-type">
+              Released : {movieData.Released}
+            </div>
+            <div className="movieDetails-type">
+              Rating : {movieData.imdbRating}
+            </div>
+          </>
+        ) : (
+          <div>Loading ....</div>
+        )}
       </div>
-  </>
-  )
+    </>
+  );
 }
 
-export default MovieDetails
+export default MovieDetails;
