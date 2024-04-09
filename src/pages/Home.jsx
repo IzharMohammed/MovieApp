@@ -1,8 +1,8 @@
 import React from 'react'
-
+import MoviePage from '../components/moviePage/MoviePage'
 function Home() {
   return (
-    <div></div>
+    <MoviePage />
   ) 
 }
 

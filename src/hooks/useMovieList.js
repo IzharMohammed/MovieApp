@@ -4,9 +4,7 @@ import  { useEffect, useState } from "react";
 
 function useMovieList(...name) {
     const [movieList, setMovieList] = useState([]);
-    console.log('name : ', name);
     async function getMovies() {
-        console.log(name);
 
         const moviesarr = name.map((name) => searchMovie(name));
 

@@ -2,11 +2,22 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import useMovieList from "../../hooks/useMovieList";
 import useDebounce from "../../hooks/useDebounce";
+import searchMovie, { movieinfo } from "../../apis/omdb";
+import MovieDetails from "../../pages/MovieDetails";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
   const [searchedText , isSearchedText] = useState('');
-  const {movieList} = useMovieList(!searchedText ? 'avengers' : searchedText );
+  const {movieList} = useMovieList(searchedText );
+  const navigator = useNavigate();
+
   console.log('movie List' , movieList);
+
+     function handleAutocompleteClick(e , id){
+          navigator(`/movie/${id}`)
+    }
+
 
   return (
     <div className="navbar-wrapper">
@@ -16,12 +27,10 @@ function Navbar() {
         onFocus={() => {
           setIsShown(true);
         }}
-        onBlur={() => {
+        onBlur={(e) => {
           setIsShown(false);
         }}
         onChange={useDebounce((e)=>{
-          console.log(e.target.value);
-          console.log('searched text ' , searchedText);
           isSearchedText(e.target.value)
         })}
         type="text"
@@ -39,13 +48,16 @@ function Navbar() {
       {
         isShown &&
         <ul className="search-bar-autocomplete">
+          <li>Autocomplete results ..... {searchedText}</li>
           {
             movieList.map((list)=>(
-              <li key={list.imdbID}>{list.Title}</li>
+              <li onMouseDown={(e)=> handleAutocompleteClick(e,list.imdbID)} data-key={list.imdbID}>{list.Title}</li>
             ))
          } 
         </ul>
       }
+
+
     </div>
   );
 }

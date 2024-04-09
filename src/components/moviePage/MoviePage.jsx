@@ -7,7 +7,7 @@ function MoviePage() {
    const {movieList}= useMovieList('avengers')
   return (
     <>
-      <Navbar />
+     {/*  <Navbar /> */}
       <div className="movie-up-wrapper">
         {movieList.map((list) => (
           <MovieCard

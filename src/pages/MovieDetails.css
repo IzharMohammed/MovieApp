@@ -1,0 +1,30 @@
+.movieDetails-wrapper{
+    border: 2px solid;
+    margin-top: 2rem;
+  /*   max-height: 39rem; */
+    background-color: white;
+    margin-left: 37rem;
+    width: 22rem;
+    }
+    
+    
+    .movieDetails-image img {
+    padding: 2rem;
+    }
+    
+    .movieDetails-title{
+        margin: 0px auto;
+    }
+    
+    .movieDetails-title , .movieDetails-year , .movieDetails-type{
+    text-align: center;
+    }
+    
+    .movieDetails-title {
+        font-size: 1.5rem;
+        width: 22rem;
+    }
+    
+    .movieDetails-year , .movieDetails-type{
+        font-size: 1.3rem;
+    }
