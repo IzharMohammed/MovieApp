@@ -24,10 +24,15 @@
     list-style-type: none;
     position: absolute;
     width: 28rem;
-    padding: 2rem;
+    padding: 1rem;
     left: 35%;
     background-color: white;
     font-size: 1.3rem;
     top: 62px;
     border-radius: 5px;
+}
+
+.search-bar-autocomplete li{
+    border-bottom: 2px solid;
+    margin-bottom: 20px;
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import useMovieList from "../../hooks/useMovieList";
-
+import useDebounce from "../../hooks/useDebounce";
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
   const [searchedText , isSearchedText] = useState('');
@@ -19,11 +19,11 @@ function Navbar() {
         onBlur={() => {
           setIsShown(false);
         }}
-        onChange={(e)=>{
+        onChange={useDebounce((e)=>{
           console.log(e.target.value);
           console.log('searched text ' , searchedText);
           isSearchedText(e.target.value)
-        }}
+        })}
         type="text"
         placeholder="search here ..."
       />
