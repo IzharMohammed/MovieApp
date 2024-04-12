@@ -1,15 +1,15 @@
 .navbar-wrapper{
-    border: 2px solid ;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0px;
     padding: 20px;
-
+    background-color:var(--dark-blue)
 }
 
 .navbar-heading{
     font-size: 35px;
+    color: var(--font-color-inverted);
 }
 
 .navbar-input{
@@ -37,4 +37,8 @@
 .search-bar-autocomplete li{
     border-bottom: 2px solid;
     margin-bottom: 20px;
+}
+
+.sun-mode{
+    background-color : white;
 }

@@ -1,8 +1,7 @@
 .movie-wrapper{
-border: 2px solid;
 margin-top: 2rem;
 max-height: 39rem;
-background-color: white;
+background-color: var( --card-background-inverted)
 }
 
 

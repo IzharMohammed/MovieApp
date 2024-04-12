@@ -1,0 +1,25 @@
+:root {
+    /* Dark mode */
+    --prime-blue: #00a0d6;
+    --dull-blue: #364f65;
+    --dark-blue: #191e26;
+    --card-background: whitesmoke;
+    --card-background-inverted: #364f65;
+
+    --font-color: black;
+    --font-color-inverted: white;
+    --light-prime-gray: #32373e;
+    background-color: #191e26;
+  }
+
+  [data-theme = 'light' ] {
+    --prime-blue: #00a0d6;
+    --dull-blue: #364f65;
+    --dark-blue: #ffffff;
+    --light-prime-gray: #e6ecf5;
+    --card-background: #364f65;
+    --card-background-inverted: whitesmoke;
+    
+    --font-color: white;
+    --font-color-inverted: black;
+  }

@@ -4,14 +4,16 @@ import "./MoviePage.css";
 import useMovieList from "../../hooks/useMovieList";
 
 function MoviePage() {
-   const {movieList}= useMovieList('avengers')
+   const {movieList}= useMovieList('avengers','spider man')
+
+
   return (
     <>
      {/*  <Navbar /> */}
       <div className="movie-up-wrapper">
         {movieList.map((list) => (
           <MovieCard
-            key={list.imdbID}
+            id={list.imdbID}
             Poster={list.Poster}
             Title={list.Title}
             Year={list.Year}

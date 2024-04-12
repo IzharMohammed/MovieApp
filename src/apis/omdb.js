@@ -3,5 +3,5 @@ export default function searchMovie(name) {
 }
 
 export  function movieinfo(id){
-    return `https://www.omdbapi.com/?i=${id}&plot=full&apikey=${import.meta.env.VITE_API_KEY}`
+    return `https://www.omdbapi.com/?i=${id}&plot=Short&apikey=${import.meta.env.VITE_API_KEY}`
 }

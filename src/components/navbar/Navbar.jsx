@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import useMovieList from "../../hooks/useMovieList";
 import useDebounce from "../../hooks/useDebounce";
@@ -6,22 +6,30 @@ import searchMovie, { movieinfo } from "../../apis/omdb";
 import MovieDetails from "../../pages/MovieDetails";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
+import ThemeContext from "../../context/ThemeContext";
+
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
-  const [searchedText , isSearchedText] = useState('');
-  const {movieList} = useMovieList(searchedText );
+  const [searchedText, isSearchedText] = useState("");
+  const { movieList } = useMovieList(searchedText);
+  const { theme, setTheme } = useContext(ThemeContext);
+  console.log(theme);
   const navigator = useNavigate();
 
-  console.log('movie List' , movieList);
+  console.log("movie List", movieList);
 
-     function handleAutocompleteClick(e , id){
-          navigator(`/movie/${id}`)
-    }
+  function handleAutocompleteClick(e, id) {
+    navigator(`/movie/${id}`);
+  }
 
 
   return (
     <div className="navbar-wrapper">
-      <div className="navbar-heading">Movix</div>
+      <div className="navbar-heading" onClick={() => navigator("/")}>
+        Movix
+      </div>
+
       <input
         className="navbar-input"
         onFocus={() => {
@@ -30,34 +38,60 @@ function Navbar() {
         onBlur={(e) => {
           setIsShown(false);
         }}
-        onChange={useDebounce((e)=>{
-          isSearchedText(e.target.value)
+        onChange={useDebounce((e) => {
+          isSearchedText(e.target.value);
         })}
         type="text"
         placeholder="search here ..."
       />
 
-      <img
-        className="theme-icon"
-        src="https://cdn.hugeicons.com/icons/moon-02-stroke-rounded.svg"
-        alt="moon-02"
-        width="24"
-        height="24"
-      />
-
-      {
-        isShown &&
+      <Tooltip title="Theme">
+        {theme === "dark" ? (
+          <div
+          className="sun-mode"
+            onClick={() => {
+              setTheme(theme === "dark" ? "light" : "dark");
+            }}
+          >
+            <img
+              src="https://cdn.hugeicons.com/icons/sun-03-stroke-rounded.svg"
+              
+              alt="sun-03"
+              width="34"
+              height="34"
+            />
+          </div>
+        ) : (
+          <>
+            <div
+              onClick={() => {
+                setTheme(theme === "dark" ? "light" : "dark");
+              }}
+            >
+              <img
+                className="theme-icon"
+                src="https://cdn.hugeicons.com/icons/moon-02-stroke-rounded.svg"
+                alt="moon-02"
+                width="34"
+                height="34"
+              />
+            </div>
+          </>
+        )}
+      </Tooltip>
+      {isShown && (
         <ul className="search-bar-autocomplete">
           <li>Autocomplete results ..... {searchedText}</li>
-          {
-            movieList.map((list)=>(
-              <li onMouseDown={(e)=> handleAutocompleteClick(e,list.imdbID)} data-key={list.imdbID}>{list.Title}</li>
-            ))
-         } 
+          {movieList.map((list) => (
+            <li
+              onMouseDown={(e) => handleAutocompleteClick(e, list.imdbID)}
+              data-key={list.imdbID}
+            >
+              {list.Title}
+            </li>
+          ))}
         </ul>
-      }
-
-
+      )}
     </div>
   );
 }
