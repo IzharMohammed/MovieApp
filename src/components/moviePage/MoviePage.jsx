@@ -4,7 +4,7 @@ import "./MoviePage.css";
 import useMovieList from "../../hooks/useMovieList";
 
 function MoviePage() {
-   const {movieList}= useMovieList('avengers','spider man')
+   const {movieList}= useMovieList('avengers','spider man' , 'iron man' , 'captain america','thor','harry potter')
 
 
   return (
