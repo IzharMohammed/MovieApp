@@ -1,25 +1,25 @@
-.navbar-wrapper{
+.navbar-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 0px;
     padding: 20px;
-    background-color:var(--dark-blue)
+    background-color: var(--dark-blue)
 }
 
-.navbar-heading{
+.navbar-heading {
     font-size: 35px;
     color: var(--font-color-inverted);
 }
 
-.navbar-input{
+.navbar-input {
     width: 30rem;
     height: 0.8rem;
     border-radius: 10px;
     padding: 13px;
 }
 
-.search-bar-autocomplete{
+.search-bar-autocomplete {
     border: 2px solid;
     list-style-type: none;
     position: absolute;
@@ -34,11 +34,11 @@
     overflow-y: scroll;
 }
 
-.search-bar-autocomplete li{
+.search-bar-autocomplete li {
     border-bottom: 2px solid;
     margin-bottom: 20px;
 }
 
-.sun-mode{
-    background-color : white;
+.sun-mode {
+    background-color: white;
 }

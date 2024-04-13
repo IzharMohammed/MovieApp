@@ -1,20 +1,19 @@
-.movie-wrapper{
-margin-top: 2rem;
-max-height: 39rem;
-background-color: var( --card-background-inverted)
+.movie-wrapper {
+    margin-top: 2rem;
+    max-height: 39rem;
+    background-color: var(--card-background-inverted)
 }
-
 
 .movie-image img {
-padding: 2rem;
+    padding: 2rem;
 }
 
-.movie-title{
+.movie-title {
     margin: 0px auto;
 }
 
-.movie-title , .movie-year , .movie-type{
-text-align: center;
+.movie-title, .movie-year, .movie-type {
+    text-align: center;
 }
 
 .movie-title {
@@ -22,6 +21,6 @@ text-align: center;
     width: 22rem;
 }
 
-.movie-year , .movie-type{
+.movie-year, .movie-type {
     font-size: 1.3rem;
 }

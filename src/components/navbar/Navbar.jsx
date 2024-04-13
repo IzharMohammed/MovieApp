@@ -2,9 +2,6 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import useMovieList from "../../hooks/useMovieList";
 import useDebounce from "../../hooks/useDebounce";
-import searchMovie, { movieinfo } from "../../apis/omdb";
-import MovieDetails from "../../pages/MovieDetails";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import ThemeContext from "../../context/ThemeContext";
@@ -22,7 +19,6 @@ function Navbar() {
   function handleAutocompleteClick(e, id) {
     navigator(`/movie/${id}`);
   }
-
 
   return (
     <div className="navbar-wrapper">
@@ -48,14 +44,14 @@ function Navbar() {
       <Tooltip title="Theme">
         {theme === "dark" ? (
           <div
-          className="sun-mode"
+            className="sun-mode"
             onClick={() => {
               setTheme(theme === "dark" ? "light" : "dark");
+              localStorage.setItem("app-theme", "light");
             }}
           >
             <img
               src="https://cdn.hugeicons.com/icons/sun-03-stroke-rounded.svg"
-              
               alt="sun-03"
               width="34"
               height="34"
@@ -66,6 +62,7 @@ function Navbar() {
             <div
               onClick={() => {
                 setTheme(theme === "dark" ? "light" : "dark");
+                localStorage.setItem("app-theme", "dark");
               }}
             >
               <img

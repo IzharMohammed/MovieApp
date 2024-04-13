@@ -1,22 +1,8 @@
-.movie-up-wrapper{
+.movie-up-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;   
-     gap: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
     background-color: var(--dark-blue);
-    
 }
-
-/* .search-bar-autocomplete{
-    border: 2px solid;
-    list-style-type: none;
-    position: absolute;
-    width: 28rem;
-    padding: 2rem;
-    left: 35%;
-    background-color: white;
-    font-size: 1.3rem;
-    top: 62px;
-    border-radius: 5px;
-} */
