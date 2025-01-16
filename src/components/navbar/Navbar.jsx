@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <div className="navbar-wrapper">
       <div className="navbar-heading" onClick={() => navigator("/")}>
-        Movix
+        Test
       </div>
 
       <input
