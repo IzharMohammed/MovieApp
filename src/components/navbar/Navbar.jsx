@@ -34,9 +34,11 @@ function Navbar() {
         onBlur={(e) => {
           setIsShown(false);
         }}
+
         onChange={useDebounce((e) => {
           isSearchedText(e.target.value);
         })}
+        
         type="text"
         placeholder="search here ..."
       />

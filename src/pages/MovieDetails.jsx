@@ -33,10 +33,7 @@ function MovieDetails() {
   
   useEffect(() => {
     downloadMovie();
-
   }, [url , id ]); 
-
-
 
   console.log("Data : ", movieData);
 

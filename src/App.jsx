@@ -14,12 +14,8 @@ function App() {
     } , [])
 
 
-
-
-
   return (
     <>
-      {/*  <MoviePage /> */}
       <ThemeContext.Provider value ={ {theme, setTheme}} >
         <div data-theme = {theme}>
       <Navbar />
