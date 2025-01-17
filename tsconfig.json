@@ -14,9 +14,10 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "jsx": "react-jsx",
-      "outDir": "./dist" // Specify the output directory for compiled files
+      "outDir": "./dist", // Specify the output directory for compiled files
+      "rootDir": "./src"
     },
-    "include": ["src"],
+    // "include": ["src"],
     "references": [{ "path": "./tsconfig.node.json" }]
   }
   
