@@ -4,14 +4,14 @@ import useMovieList from "../../hooks/useMovieList";
 import useDebounce from "../../hooks/useDebounce";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
-import ThemeContext from "../../context/ThemeContext";
+// import ThemeContext from "../../context/ThemeContext";
 
 function Navbar() {
   const [isShown, setIsShown] = useState(false);
   const [searchedText, isSearchedText] = useState("");
   const { movieList } = useMovieList(searchedText);
-  const { theme, setTheme } = useContext(ThemeContext);
-  console.log(theme);
+  // const { theme, setTheme } = useContext(ThemeContext);
+  // console.log(theme);
   const navigator = useNavigate();
 
   console.log("movie List", movieList);
@@ -43,8 +43,8 @@ function Navbar() {
         placeholder="search here ..."
       />
 
-      <Tooltip title="Theme">
-        {theme === "dark" ? (
+      {/* <Tooltip >
+        
           <div
             className="sun-mode"
             onClick={() => {
@@ -59,7 +59,7 @@ function Navbar() {
               height="34"
             />
           </div>
-        ) : (
+       
           <>
             <div
               onClick={() => {
@@ -77,7 +77,7 @@ function Navbar() {
             </div>
           </>
         )}
-      </Tooltip>
+      </Tooltip> */}
       {isShown && (
         <ul className="search-bar-autocomplete">
           <li>Autocomplete results ..... {searchedText}</li>

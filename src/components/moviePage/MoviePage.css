@@ -4,5 +4,5 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    background-color: var(--dark-blue);
+    /* background-color: var(--dark-blue); */
 }

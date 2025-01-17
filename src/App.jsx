@@ -6,7 +6,7 @@ import ThemeContext from "./context/ThemeContext";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [theme , setTheme] =  useState('dark');
+  // const [theme , setTheme] =  useState('dark');
 
     useEffect(()=>{
       const userTheme = localStorage.getItem('app-theme')

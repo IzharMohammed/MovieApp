@@ -1,7 +1,7 @@
 .movie-wrapper {
     margin-top: 2rem;
     max-height: 39rem;
-    background-color: var(--card-background-inverted)
+    /* background-color: var(--card-background-inverted) */
 }
 
 .movie-image img {

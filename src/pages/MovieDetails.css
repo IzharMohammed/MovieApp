@@ -7,7 +7,7 @@
     }
     
     .root{
-        background-color: var(--dark-blue);
+        /* background-color: var(--dark-blue); */
         display: flex;
     }
     
@@ -43,7 +43,7 @@
 
     .genre{
         border: 1px solid var(--dull-blue);
-        background-color: var(--dull-blue);
+        /* background-color: var(--dull-blue); */
         border-radius: 20px;
         padding: 10px 20px;
         margin-right: 1rem;
