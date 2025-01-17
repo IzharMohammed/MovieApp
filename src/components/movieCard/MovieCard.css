@@ -1,4 +1,4 @@
-.movie-wrapper {
+ .movie-wrapper {
     margin-top: 2rem;
     max-height: 39rem;
     /* background-color: var(--card-background-inverted) */
@@ -6,6 +6,8 @@
 
 .movie-image img {
     padding: 2rem;
+    width: 22rem;
+    height: 30rem;
 }
 
 .movie-title {
@@ -14,13 +16,16 @@
 
 .movie-title, .movie-year, .movie-type {
     text-align: center;
+    color: white;
 }
 
 .movie-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     width: 22rem;
 }
 
 .movie-year, .movie-type {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
+
+
