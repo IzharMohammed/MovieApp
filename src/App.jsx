@@ -16,12 +16,14 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value ={ {theme, setTheme}} >
+      {/* <ThemeContext.Provider value ={ {theme, setTheme}} >
         <div data-theme = {theme}>
       <Navbar />
       <MainRouter />
       </div>
-      </ThemeContext.Provider>
+      </ThemeContext.Provider> */}
+      <Navbar />
+      <MainRouter />
     </>
   );
 }
