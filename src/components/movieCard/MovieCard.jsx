@@ -10,16 +10,17 @@ function MovieCard({ id, Poster, Title, Year, Type }) {
   }
 
   return (
-    <div onClick={(e) => handleAutocompleteClick(id)}>
-      <div className="movie-wrapper">
-        <div className="movie-image">
-          <img src={Poster} />
+      <div onClick={(e) => handleAutocompleteClick(id)}>
+        <div className="movie-wrapper">
+          <div className="movie-image">
+            <img src={Poster} />
+          </div>
+          <div className="movie-title">{Title}</div>
+          <div className="movie-year"> Released : {Year}</div>
+          <div className="movie-type">Type : {Type}</div>
         </div>
-        <div className="movie-title">{Title}</div>
-        <div className="movie-year"> Released : {Year}</div>
-        <div className="movie-type">Type : {Type}</div>
       </div>
-    </div>
+
   );
 }
 

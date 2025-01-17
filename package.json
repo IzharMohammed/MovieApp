@@ -13,16 +13,19 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.15",
+    "@react-three/fiber": "^8.17.12",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
+    "@types/three": "^0.172.0",
     "axios": "^1.6.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
-    "tailwind-merge": "^2.6.0"
+    "tailwind-merge": "^2.6.0",
+    "three": "^0.172.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
