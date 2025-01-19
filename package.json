@@ -13,6 +13,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@gsap/react": "^2.1.2",
     "@mui/material": "^5.15.15",
     "@react-three/fiber": "^8.17.12",
     "@tsparticles/engine": "^3.7.1",
@@ -22,6 +23,7 @@
     "axios": "^1.6.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.1",
+    "gsap": "^3.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",

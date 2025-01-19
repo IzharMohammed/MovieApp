@@ -4,6 +4,7 @@ import "./MoviePage.css";
 import useMovieList from "../../hooks/useMovieList";
 import { SparklesCore } from "../ui/sparkles";
 import { HoverEffect } from "../ui/card-hover-effect";
+import Cursor from "../cursor";
 
 function MoviePage() {
   const { movieList } = useMovieList(
@@ -19,6 +20,7 @@ console.log(`movie list:- ${JSON.stringify(movieList)}`);
   return (
     <>
       <div className="h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+       <Cursor />
         <div className="w-full absolute inset-0 h-full">
           <SparklesCore
             id="tsparticlesfullpage"

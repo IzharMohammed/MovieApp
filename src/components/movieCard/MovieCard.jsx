@@ -20,7 +20,6 @@ function MovieCard({ id, Poster, Title, Year, Type }) {
           <div className="movie-type">Type : {Type}</div>
         </div>
       </div>
-
   );
 }
 

@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import MovieCard from "../components/movieCard/MovieCard";
 import Rating from "@mui/material/Rating";
+import { SparklesCore } from "../components/ui/sparkles";
 
 function MovieDetails() {
   const [movieData, setMovieData] = useState(null);
@@ -25,15 +26,15 @@ function MovieDetails() {
   }, url); */
 
   // METHOD 2
-   async function downloadMovie() {
+  async function downloadMovie() {
     const response = await axios.get(url);
     console.log(response.data);
     setMovieData(response.data);
   }
-  
+
   useEffect(() => {
     downloadMovie();
-  }, [url , id ]); 
+  }, [url, id]);
 
   console.log("Data : ", movieData);
 
@@ -42,7 +43,19 @@ function MovieDetails() {
   };
 
   return (
-    <div className="root">
+    <div className="root h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+      <div className="w-full absolute inset-0 h-full">
+        <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+      </div>
+      <div>
       <div className="movieDetails-wrapper">
         {movieData ? (
           <>
@@ -57,6 +70,7 @@ function MovieDetails() {
           <div>Loading ....</div>
         )}
       </div>
+      
       {movieData && (
         <div className="movieDetails-plot">
           <div> Plot : {movieData.Plot}</div>
@@ -77,7 +91,7 @@ function MovieDetails() {
             />
           </div>
         </div>
-      )}
+      )}</div>
     </div>
   );
 }
