@@ -4,7 +4,7 @@
      height: 38rem;
      border-radius: 50px;
      border: 1px solid grey;
-     cursor: pointer;
+     /* cursor: pointer; */
      /* background-color: var(--card-background-inverted) */
      /* background: linear-gradient(145deg, #2a2a2a, #383838); */
  }
