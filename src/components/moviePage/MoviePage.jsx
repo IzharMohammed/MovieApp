@@ -4,7 +4,7 @@ import "./MoviePage.css";
 import useMovieList from "../../hooks/useMovieList";
 import { SparklesCore } from "../ui/sparkles";
 import { HoverEffect } from "../ui/card-hover-effect";
-import Cursor from "../cursor";
+import Cursor from "../Cursor";
 
 function MoviePage() {
   const { movieList } = useMovieList(
@@ -15,12 +15,12 @@ function MoviePage() {
     "thor",
     "harry potter"
   );
-console.log(`movie list:- ${JSON.stringify(movieList)}`);
+  console.log(`movie list:- ${JSON.stringify(movieList)}`);
 
   return (
     <>
       <div className="h-full relative w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
-       <Cursor />
+        <Cursor />
         <div className="w-full absolute inset-0 h-full">
           <SparklesCore
             id="tsparticlesfullpage"
@@ -35,6 +35,7 @@ console.log(`movie list:- ${JSON.stringify(movieList)}`);
         <div className="movie-up-wrapper">
           {movieList.map((list) => (
             <MovieCard
+              key={list.imdbID}
               id={list.imdbID}
               Poster={list.Poster}
               Title={list.Title}

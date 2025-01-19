@@ -10,6 +10,8 @@ function Cursor() {
       gsap.to("#cursor", {
         x: clientX - 20/2,
         y: clientY - 20/2,
+        duration: 1,
+        ease: "back.out"
       });
     };
     window.addEventListener("mousemove", handeMouseMove);
@@ -17,8 +19,9 @@ function Cursor() {
       window.removeEventListener("mousemove", handeMouseMove);
     };
   }, []);
+  
   return (
-    <div id="cursor" className="w-[20px] h-[20px] bg-white rounded-full absolute top-0 left-0"></div>
+    <div id="cursor" className="w-[20px] h-[20px] bg-white rounded-full fixed z-10 top-0 left-0"></div>
   );
 }
 

@@ -1,6 +1,6 @@
 .movie-up-wrapper {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     z-index: 1;
